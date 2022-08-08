@@ -9,6 +9,7 @@ Create Logotype / Wordmark Logo with:
 - Change Text Color
 - Change Font Family
 - Change Text Size
+- Draggable Text
 - Preview Logo
 - Download Logo
 
