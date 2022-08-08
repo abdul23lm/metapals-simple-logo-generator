@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/svg+xml" href="/metapals-simple-logo-generator/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MetaPals Simple Logo Generator</title>
+  <script type="module" crossorigin src="/metapals-simple-logo-generator/assets/index.931a956f.js"></script>
+  <link rel="stylesheet" href="/metapals-simple-logo-generator/assets/index.a364f626.css">
+</head>
+
+<body>
+  <div id="app" class="text-slate-500">
+    <div class="bg-slate-800 text-white md:text-center mb-4 py-2 md:font-bold text-sm md:text-2xl px-4 shadow-xl">
+      MetaPals Simple Logo Generator 👩‍🎨
+    </div>
+    <div class="flex justify-center mb-8 relative">
+      <div class="absolute text-indigo-400 text-xs top-4">
+        *The letters are draggable
+      </div>
+      <div id="generatedTextContainer" class="max-w-xl w-full h-32 bg-pink-100 flex items-center justify-center"
+        style="color: rgb(254, 74, 73);">
+        <div class="flex items-center h-full">
+          <div id="generatedText" class="h-full text-center font-extrabold px-8" style="font-size: 26px;">
+            <div class="chars">MetaPals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="md:w-72">
+        <div class="relative mb-8">
+          <input id="inputText" type="text"
+            class="w-full transition-colors duration-800 bg-slate-100 border border-slate-300 px-2 py-1 rounded focus:border-slate-400 focus:outline-0"
+            placeholder="Type your text logo here" value="MetaPals Awesome">
+
+          <div id="animateTypingSymbol" class="h-full flex items-center absolute top-0 right-4">
+            <div class="w-2 h-2 bg-indigo-500 rounded-full animate-ping"></div>
+          </div>
+        </div>
+
+        <div class="pb-4">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Choose Font</label>
+            <select id="textStyle"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option selected disabled>Choose Font</option>
+              <option value="Arial">Arial</option>
+              <option value="monospace">Monospace</option>
+              <option value="Verdana">Verdana</option>
+              <option value="Impact">Impact</option>
+              <option value="Cursive">Cursive</option>
+            </select>
+        </div>
+
+        <div class="flex mb-8">
+          <label>Size :&nbsp;</label>
+          <input id="inputSize" class="flex-1" type="range" min="8" max="72" value="26">&nbsp;<span
+            id="size-text">26px</span>
+        </div>
+        <div id="textColor" class="mb-8" style="display: flex; justify-content: center;">
+          <button
+            style="width: 3rem; margin-left: 4px; margin-right: 4px; height: 3rem; border-width: 4px; border-color: olivedrab; background-color: rgb(254, 74, 73); border-radius: 8px;"></button>
+          <button
+            style="width: 3rem; margin-left: 4px; margin-right: 4px; height: 3rem; border-width: 4px; border-color: white; background-color: rgb(42, 183, 202); border-radius: 8px;"></button>
+          <button
+            style="width: 3rem; margin-left: 4px; margin-right: 4px; height: 3rem; border-width: 4px; border-color: white; background-color: rgb(254, 215, 102); border-radius: 8px;"></button>
+          <button
+            style="width: 3rem; margin-left: 4px; margin-right: 4px; height: 3rem; border-width: 4px; border-color: white; background-color: rgb(230, 230, 234); border-radius: 8px;"></button>
+          <button
+            style="width: 3rem; margin-left: 4px; margin-right: 4px; height: 3rem; border-width: 4px; border-color: white; background-color: rgb(244, 244, 248); border-radius: 8px;"></button>
+        </div>
+
+        <div class="flex justify-center">
+          <button id="saveBtn"
+            class="border-slate-800 bg-slate-500 text-white px-4 py-1 border-b-4 rounded hover:bg-slate-400 transition-colors flex items-center justify-center">
+            <div class="inline-block">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="18"
+                height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                <polyline points="7 11 12 16 17 11"></polyline>
+                <line x1="12" y1="4" x2="12" y2="16"></line>
+              </svg>
+            </div>
+            &nbsp;Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="modalSaveBtn"
+      class="bg-white transition-all w-100 duration-700 rounded-xl shadow-xl max-w-lg left-[50%] translate-x-[-50%] relative border border-black overflow-hidden"
+      style="position: fixed; top: -100%; opacity: 1; pointer-events: auto;">
+      <button
+        class="modal-close-button w-4 h-4 flex justify-center items-center text-white bg-slate-500 hover:bg-slate-400 rounded-full absolute top-2 right-2">
+        <span style="margin-top: -4px;">x</span>
+      </button>
+      <div class="modal-save-content"></div>
+      <div class="text-center py-2 bg-indigo-600 text-white px-2 md:px-8 text-xs md:text-base">
+        <button type="button" class="text-center py-2 bg-indigo-600 text-white px-2 md:px-8 text-xs md:text-base" id="downloadBtn">Download Image</button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+
+</html>
